@@ -55,8 +55,11 @@ Route::get('/', function () {
     */
 
     //< 練習5-1>  使用 delete 方法
-     $post = \App\Post::find(1);
-     $post->delete();
+    // $post = \App\Post::find(1);
+    // $post->delete();
+
+    //< 練習5-3>   使用 destroy 方法
+     \App\Post::destroy(2);
 
      return view('welcome');
 });
