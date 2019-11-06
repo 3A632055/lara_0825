@@ -34,8 +34,17 @@ Route::get('/', function () {
     // dd($post);
 
     //< 練習3-4> 練習條件式
-     $posts = \App\Post::where('id', '<', 10)->orderBy('id', 'DESC')->get();
-     dd($posts);
+    // $posts = \App\Post::where('id', '<', 10)->orderBy('id', 'DESC')->get();
+    // dd($posts);
+
+    //< 練習4-1> 使用 update 方法
+    
+    $post = \App\Post::find(1);
+    $post->update([
+        'title' => 'updated title',
+        'content' => 'updated content',
+    ]);
+
 
      return view('welcome');
 });
