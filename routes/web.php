@@ -47,12 +47,16 @@ Route::get('/', function () {
     */
 
     //< 練習4-3> 換用 save 方法
-    
+    /*
     $post = \App\Post::find(1);
     $post->title = 'saved title';
     $post->content = 'saved content';
     $post->save();
+    */
 
+    //< 練習5-1>  使用 delete 方法
+     $post = \App\Post::find(1);
+     $post->delete();
 
      return view('welcome');
 });
