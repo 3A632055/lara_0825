@@ -20,10 +20,14 @@ Route::get('/', function () {
     // ]);
 
     //< 練習2-5> 改用 new 的方式新增資料
-     $post = new \App\Post();
-     $post->title = 'test title';
-     $post->content = 'test content';
-     $post->save();
+    // $post = new \App\Post();
+    // $post->title = 'test title';
+    // $post->content = 'test content';
+    // $post->save();
+
+    //< 練習3-2> 使用 all 方法
+     $posts = \App\Post::all();
+     dd($posts);
 
      return view('welcome');
 });
