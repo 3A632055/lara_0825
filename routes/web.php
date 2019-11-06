@@ -26,8 +26,12 @@ Route::get('/', function () {
     // $post->save();
 
     //< 練習3-2> 使用 all 方法
-     $posts = \App\Post::all();
-     dd($posts);
+    // $posts = \App\Post::all();
+    // dd($posts);
+
+    //< 練習3-3> 使用 find 方法
+     $post = \App\Post::find(1);
+     dd($post);
 
      return view('welcome');
 });
