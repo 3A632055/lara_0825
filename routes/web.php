@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    // < 練習2-2>使用 create 方法
+     \App\Post::create([
+     'title' => 'test title',
+     'content' => 'test content',
+     ]);
+
+     return view('welcome');
 });
 
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
