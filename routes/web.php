@@ -62,9 +62,15 @@ Route::get('/', function () {
     // \App\Post::destroy(2);
 
     //< 練習5-5>  刪除多筆資料
-     \App\Post::destroy(3, 5, 7);
+    // \App\Post::destroy(3, 5, 7);
 
-     return view('welcome');
+    // return view('welcome');
+    //< 練習6-1>  取得 Collection
+    $allPosts = \App\Post::all();
+    dd($allPosts);
+    $featuredPosts = \App\Post::where('is_feature', 1)->get();
+    dd($featuredPosts);
+
 });
 
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
