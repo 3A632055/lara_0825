@@ -66,11 +66,17 @@ Route::get('/', function () {
 
     // return view('welcome');
     //< 練習6-1>  取得 Collection
+    /*
     $allPosts = \App\Post::all();
     dd($allPosts);
     $featuredPosts = \App\Post::where('is_feature', 1)->get();
     dd($featuredPosts);
-
+*/
+    //< 練習6-2>  取得 Model
+    $fourthPost = \App\Post::find(4);
+    dd($fourthPost);
+    $lastPost = \App\Post::orderBy('id', 'DESC')->first();
+    dd($lastPost);
 });
 
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
