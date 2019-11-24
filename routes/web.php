@@ -73,11 +73,20 @@ Route::get('/', function () {
     dd($featuredPosts);
 */
     //< 練習6-2>  取得 Model
+    /*
     $fourthPost = \App\Post::find(4);
     dd($fourthPost);
     $lastPost = \App\Post::orderBy('id', 'DESC')->first();
     dd($lastPost);
-});
+*/
+
+    //單元練習< 練習7-4> 透過關聯將資料印出來
+    $post = \App\Post::find(4);
+    foreach($post->comments as $comment) {
+        echo $comment->content.'<br>';
+    }
+    });
+
 
 Route::get('posts', ['as' => 'posts.index', 'uses' =>
     'PostsController@index']);
