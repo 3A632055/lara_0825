@@ -17,7 +17,7 @@ class Post extends Model
         'is_feature'
     ];
 
-    //< 練習7-2> 開啟 Post.php ，增加關聯
+    //單元練習< 練習7-2> 開啟 Post.php ，增加關聯
     public function comments()
     {
         return $this->hasMany(Comment::class);
